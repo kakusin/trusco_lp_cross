@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <header class="header">
+  <header id="header" class="header">
     <div class="header__inner">
       <p class="header__img">
         <picture>
@@ -59,6 +59,11 @@
             <img src="./assets/image/logo-01.svg" alt="在庫60万">
           </picture>
         </p>
+        <div class="mv__content">
+          <p class="mv__content--txt">多様</p>
+          <p class="mv__content--txt">多様</p>
+          <p class="mv__content--txt">多様</p>
+        </div>
       </div>
     </section>
 
@@ -73,11 +78,7 @@
     <section id="point" class="point">
       <div class="point__wrap">
         <h2 class="point__heading">
-          <span class="point__heading--num">
-            <picture>
-              <img src="./assets/image/logo-01.svg" alt="point1">
-            </picture>
-          </span>
+          <span class="point__heading--sub"><span class="point__heading--txt">Point</span>1</span>
           商品ごとの価格と納期がひと目で分かる
         </h2>
 
@@ -102,11 +103,7 @@
 
       <div class="point__wrap">
         <h2 class="point__heading">
-          <span class="point__heading--num">
-            <picture>
-              <img src="./assets/image/logo-01.svg" alt="point2">
-            </picture>
-          </span>
+          <span class="point__heading--sub"><span class="point__heading--txt">Point</span>2</span>
           商品ごとの価格と納期がひと目で分かる
         </h2>
 
@@ -121,11 +118,6 @@
                 <img src="./assets/image/logo-01.svg" alt="point2">
               </picture>
               <p class="point__item--txt">60万点</p>
-              <p class="point__item--caption">
-                <picture>
-                  <img src="./assets/image/logo-01.svg" alt="or">
-                </picture>
-              </p>
             </li>
             <li class="point__item">
               <h3 class="point__item--ttl">運送業</h3>
@@ -133,11 +125,6 @@
                 <img src="./assets/image/logo-01.svg" alt="point2">
               </picture>
               <p class="point__item--txt">60万点</p>
-              <p class="point__item--caption">
-                <picture>
-                  <img src="./assets/image/logo-01.svg" alt="or">
-                </picture>
-              </p>
             </li>
             <li class="point__item">
               <h3 class="point__item--ttl">運送業</h3>
@@ -152,11 +139,7 @@
 
       <div class="point__wrap">
         <h2 class="point__heading">
-          <span class="point__heading--num">
-            <picture>
-              <img src="./assets/image/logo-01.svg" alt="point3">
-            </picture>
-          </span>
+          <span class="point__heading--sub"><span class="point__heading--txt">Point</span>3</span>
           商品ごとの価格と納期がひと目で分かる
         </h2>
 
@@ -283,31 +266,19 @@
         <h3 class="support__ttl">最短<span class="support__ttl--orange">今すぐ</span></h3>
         <ol class="support__list">
           <li class="support__item">
-            <h4 class="support__item--num">
-              <picture>
-                <img src="./assets/image/logo-01.svg" alt="1clic">
-              </picture>
-            </h4>
+            <p class="support__item--ttl"><span class="support__item--num">1</span>clic</p>
             <picture>
               <img src="./assets/image/logo-01.svg" alt="test">
             </picture>
           </li>
           <li class="support__item">
-            <h4 class="support__item--num">
-              <picture>
-                <img src="./assets/image/logo-01.svg" alt="2clic">
-              </picture>
-            </h4>
+            <p class="support__item--ttl"><span class="support__item--num">2</span>clic</p>
             <picture>
               <img src="./assets/image/logo-01.svg" alt="test">
             </picture>
           </li>
           <li class="support__item">
-            <h4 class="support__item--num">
-              <picture>
-                <img src="./assets/image/logo-01.svg" alt="注文完了">
-              </picture>
-            </h4>
+            <p class="support__item--ttl">注文完了</p>
             <picture>
               <img src="./assets/image/logo-01.svg" alt="test">
             </picture>
@@ -327,13 +298,7 @@
 
       <div class="support__wrap">
         <div class="support__inner">
-
-          <p class="support__heading--lead">
-            <picture>
-              <img src="./assets/image/logo-01.svg" alt="もっと">
-            </picture>
-          </p>
-          <h3 class="support__heading">２つの</h3>
+          <h3 class="support__heading"><span class="support__heading--lead">もっと</span>２つの</h3>
           <ul class="support__content">
             <li class="support__box">
               <p class="support__box--lead">高頻度</p>
