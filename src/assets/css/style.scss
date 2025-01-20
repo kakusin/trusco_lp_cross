@@ -66,6 +66,7 @@ body {
 
 //floating
 .floating {
+  display: none; //test
   opacity: 0;
   background-color: #EBEBEB;
   position: sticky;
@@ -106,9 +107,9 @@ body {
 
         &::before {
           content: '';
-          background-color: #333;
-          width: min(50px, (50/1440*100) *var(--vw));
-          aspect-ratio: 1/1;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          background-size: contain;
         }
 
         &:hover {
@@ -128,6 +129,12 @@ body {
         background: #006949;
         color: #FFFFFF;
         box-shadow: 0px min(4px, (4/1440*100) *var(--vw)) 0 0px #044430;
+
+        &::before {
+          background-image: url(../images/icon-floating-01.svg);
+          width: min(49px, (49/1440*100) *var(--vw));
+          height: min(42px, (42/1440*100) *var(--vw));
+        }
       }
     }
 
@@ -139,6 +146,12 @@ body {
         color: #006949;
         border: min(3px, (3/1440*100) *var(--vw)) solid #006949;
         box-shadow: 0px min(4px, (4/1440*100) *var(--vw)) min(4px, (4/1440*100) *var(--vw)) 0px #044430;
+
+        &::before {
+          background-image: url(../images/icon-floating-02.svg);
+          width: min(51px, (51/1440*100) *var(--vw));
+          height: min(49px, (49/1440*100) *var(--vw));
+        }
       }
     }
   }
@@ -206,18 +219,54 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+
+  &__img {
+    background: url(../images/bg-header-01.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: auto;
+    width: 799px;
+    height: 143px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 //mv
 .mv {
-  height: min(800px, (800/1440*100) *var(--vw));
-  background: #8FBCAE;
+  background: url(../images/bg-mv-01.png);
+  background-repeat: repeat;
+  background-position: bottom;
+  background-size: auto;
 
   &__inner {
     height: 100%;
     width: min(1126px, (1126/1440*100) *var(--vw));
     margin: 0 auto 0 min(169px, (169/1440*100) *var(--vw));
-    padding: min(183px, (4/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw));
+    padding: min(183px, (183/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw));
+    position: relative;
+  }
+
+  &__heading {
+    &--txt {
+      margin-top: min(32px, (32/1440*100) *var(--vw));
+
+      &::after {
+        content: '';
+        background: url(../images/img-mv-02.png);
+        width: min(341px, (341/1440*100) *var(--vw));
+        height: min(56px, (56/1440*100) *var(--vw));
+        display: block;
+        margin-top: min(29px, (29/1440*100) *var(--vw));
+      }
+    }
+
+    &--img {
+      position: absolute;
+      top: min(163px, (163/1440*100) *var(--vw));
+      right: 0;
+    }
   }
 
   &__content {
@@ -225,6 +274,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: min(53px, (53/1440*100) *var(--vw));
+    margin-top: min(48px, (48/1440*100) *var(--vw));
 
     &--txt {
       font-size: min(28px, (28/1440*100) *var(--vw));
@@ -243,7 +293,7 @@ body {
       &:not(:last-child) {
         &::after {
           content: '';
-          background: #EB5C03;
+          background: url(../images/figure-mv-01.svg);
           width: min(29px, (29/1440*100) *var(--vw));
           aspect-ratio: 1/1;
           position: absolute;
@@ -281,16 +331,46 @@ body {
 
 //point
 .point {
+  &__inner{
+    position: relative;
+  }
   &__wrap {
     margin-bottom: min(174px, (174/1440*100) *var(--vw));
 
+    &:nth-child(2) {
+      .point__inner{
+        &::before {
+          content: '';
+          background: url(../images/img-point-01.png);
+          width: min(341px, (341/1440*100) *var(--vw));
+          height: min(55px, (55/1440*100) *var(--vw));
+          position: absolute;
+          top: min(-185px, (-185/1440*100) *var(--vw));
+          left:  min(-95px, (-95/1440*100) *var(--vw));
+        }
+      }
+    }
+
     &:last-child {
       margin-bottom: min(80px, (80/1440*100) *var(--vw));
+      .point__inner{
+        &::before {
+          content: '';
+          background: url(../images/img-point-05.png);
+          width: min(165px, (165/1440*100) *var(--vw));
+          height: min(87px, (87/1440*100) *var(--vw));
+          position: absolute;
+          top: min(-213px, (-213/1440*100) *var(--vw));
+          right:  min(-53px, (-53/1440*100) *var(--vw));
+        }
+      }
     }
   }
 
   &__heading {
     background: #EA5413;
+    background: url(../images/bg-point-02.png);
+    background-repeat: repeat;
     color: #FFFFFF;
     font-size: min(40px, (40/1440*100) *var(--vw));
     font-weight: 800;
@@ -301,17 +381,31 @@ body {
     margin-bottom: min(50px, (50/1440*100) *var(--vw));
     position: relative;
 
+    &::before {
+      content: '';
+      background: url(../images/bg-point-01.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: auto;
+      width: min(290px, (590/1440*100) *var(--vw));
+      height: min(54px, (54/1440*100) *var(--vw));
+      position: absolute;
+      top: min(-54px, (-54/1440*100) *var(--vw));
+      z-index: 5;
+    }
+
     &--sub {
       position: absolute;
-      top: min(-45px, (-45/1440*100) *var(--vw));
+      top: min(-54px, (-54/1440*100) *var(--vw));
       color: #FFDD1A;
       font-size: min(45px, (45/1440*100) *var(--vw));
-      background: #161616;
       display: flex;
       align-items: flex-end;
       justify-content: center;
       gap: min(4px, (4/1440*100) *var(--vw));
       line-height: 1;
+      z-index: 10;
+
     }
 
     &--txt {
@@ -324,25 +418,44 @@ body {
     font-size: min(24px, (24/1440*100) *var(--vw));
     font-weight: 700;
     margin-bottom: min(60px, (60/1440*100) *var(--vw));
+    text-align: center;
   }
 
   &__container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: min(-47px, (-47/1440*100) *var(--vw));
+    position: relative;
+
+    &::before {
+      content: '';
+      background: #E6E6E6;
+      width: min(500px, (500/1440*100) *var(--vw));
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: min(-50px, (50/1440*100) *var(--vw));
+      z-index: 5;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 10;
+    width: min(697px, (697/1440*100) *var(--vw));
   }
 
   &__box {
-    background: #E6E6E6;
-    width: min(500px, (500/1440*100) *var(--vw));
-    aspect-ratio: 1/1;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: min(40px, (40/1440*100) *var(--vw));
+    width: min(403px, (403/1440*100) *var(--vw));
+    position: relative;
+    z-index: 10;
 
     &--txt01 {
       font-size: min(20px, (20/1440*100) *var(--vw));
@@ -350,17 +463,21 @@ body {
 
       &::after {
         content: '';
-        background: #ccc;
-        width: min(83px, (83/1440*100) *var(--vw));
-        height: min(109px, (109/1440*100) *var(--vw));
+        background-image: url(../images/arrow-point-01.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+        width: min(109px, (109/1440*100) *var(--vw));
+        height: min(83px, (83/1440*100) *var(--vw));
         display: block;
-        margin-top: min(50px, (50/1440*100) *var(--vw));
+        margin: min(50px, (50/1440*100) *var(--vw)) auto 0;
       }
     }
 
     &--txt02 {
       font-size: min(24px, (24/1440*100) *var(--vw));
       font-weight: 800;
+      text-align: center;
     }
 
     &--strong {
@@ -395,6 +512,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       border-radius: min(20px, (20/1440*100) *var(--vw)) min(20px, (20/1440*100) *var(--vw)) 0 0;
     }
 
@@ -452,8 +570,27 @@ body {
 
 //step
 .step {
+  background-image: url(../images/bg-step-01.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
   &__inner {
     padding: min(170px, (170/1440*100) *var(--vw)) 0 min(167px, (167/1440*100) *var(--vw));
+    position: relative;
+
+    &::before {
+      content: '';
+      background-image: url(../images/img-step-06.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+      width: min(284.63px, (284.63/1440*100) *var(--vw));
+      height: min(105.6px, (105.6/1440*100) *var(--vw));
+      position: absolute;
+      bottom: 0;
+      right: min(19px, (19/1440*100) *var(--vw));
+    }
   }
 
   &__heading {
@@ -462,12 +599,12 @@ body {
     border-bottom: min(8px, (8/1440*100) *var(--vw)) solid #161616;
     width: fit-content;
     text-align: center;
-    margin-bottom: min(63px, (63/1440*100) *var(--vw));
+    margin: 0 auto min(63px, (63/1440*100) *var(--vw));
   }
 
   &__list {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min(380px, (380/1440*100) *var(--vw)) min(210px, (210/1440*100) *var(--vw));
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: min(166px, (166/1440*100) *var(--vw)) min(36px, (36/1440*100) *var(--vw));
   }
@@ -477,10 +614,11 @@ body {
     box-shadow: min(3px, (3/1440*100) *var(--vw)) min(6px, (6/1440*100) *var(--vw)) 0 0px #006949;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: stretch;
     flex-direction: column;
-    height: min(380px, (380/1440*100) *var(--vw));
     position: relative;
+    background: #FFFFFF;
+    padding: 0 min(20px, (20/1440*100) *var(--vw));
 
     &:last-child {
       grid-row: 2 / 3;
@@ -491,9 +629,12 @@ body {
 
       &::after {
         content: '';
-        background: #EA5413;
-        width: min(82px, (82/1440*100) *var(--vw));
-        height: min(108px, (108/1440*100) *var(--vw));
+        background-image: url(../images/arrow-step-02.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: min(108px, (108/1440*100) *var(--vw));
+        height: min(82px, (82/1440*100) *var(--vw));
         position: absolute;
         top: min(-148px, (-148/1440*100) *var(--vw));
         left: 50%;
@@ -535,13 +676,22 @@ body {
     &:not(:last-child) {
       &::after {
         content: '';
-        background: #EA5413;
+        background-image: url(../images/arrow-step-01.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         width: min(20px, (20/1440*100) *var(--vw));
         height: min(45px, (45/1440*100) *var(--vw));
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         right: min(-30px, (-30/1440*100) *var(--vw));
+      }
+    }
+
+    &:nth-child(4) {
+      &::after {
+        content: none;
       }
     }
 
@@ -560,6 +710,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     font-size: min(40px, (40/1440*100) *var(--vw));
     font-weight: 800;
     color: #FFFFFF;
@@ -628,14 +779,11 @@ body {
 
     .support__item {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
       position: relative;
 
       &--ttl {
-        margin-bottom: min(40px, (40/1440*100) *var(--vw));
+        margin: 0 auto min(40px, (40/1440*100) *var(--vw));
         position: relative;
         z-index: 10;
         font-size: min(20px, (20/1440*100) *var(--vw));
@@ -670,6 +818,20 @@ body {
       &:last-child {
         .support__item--ttl {
           align-items: center;
+          position: relative;
+
+          &::before {
+            content: '';
+            background-image: url(../images/img-support-01.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: contain;
+            width: min(35px, (35/1440*100) *var(--vw));
+            height: min(25px, (25/1440*100) *var(--vw));
+            position: absolute;
+            top: min(-19px, (-19/1440*100) *var(--vw));
+            right: min(-18px, (-18/1440*100) *var(--vw));
+          }
         }
       }
     }
@@ -695,6 +857,20 @@ body {
     .support {
       &__inner {
         padding: min(170px, (170/1440*100) *var(--vw)) 0 min(110px, (110/1440*100) *var(--vw));
+        position: relative;
+
+        &::before {
+          content: '';
+          background-image: url(../images/img-support-02.png);
+          background-repeat: no-repeat;
+          background-position: bottom;
+          background-size: contain;
+          width: min(366px, (366/1440*100) *var(--vw));
+          height: min(300px, (300/1440*100) *var(--vw));
+          position: absolute;
+          top: min(-165px, (-165/1440*100) *var(--vw));
+          right: min(-70px, (-70/1440*100) *var(--vw));
+        }
       }
 
       &__heading {
@@ -752,7 +928,10 @@ body {
 
         &::after {
           content: '';
-          background-color: #006949;
+          background-image: url(../images/img-support-03.svg);
+          background-repeat: no-repeat;
+          background-position: bottom;
+          background-size: contain;
           width: min(65px, (65/1440*100) *var(--vw));
           aspect-ratio: 1/1;
           position: absolute;
@@ -769,7 +948,6 @@ body {
         border-radius: 50%;
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-direction: column;
         position: relative;
 
@@ -784,6 +962,7 @@ body {
           display: flex;
           align-items: center;
           justify-content: center;
+          margin-top: min(90px, (90/1440*100) *var(--vw));
         }
 
         &--ttl {
@@ -792,14 +971,19 @@ body {
           margin-top: min(20px, (20/1440*100) *var(--vw));
         }
 
+        &--logo {
+          height: min(125px, (125/1440*100) *var(--vw));
+          display: flex;
+          align-items: center;
+        }
+
         &--txt {
           font-size: min(16px, (16/1440*100) *var(--vw));
           font-weight: 700;
-          margin-top: min(30px, (30/1440*100) *var(--vw));
         }
 
         &--link {
-          margin-top: min(47px, (47/1440*100) *var(--vw));
+          margin-top: min(40px, (40/1440*100) *var(--vw));
 
           a {
             font-size: min(16px, (16/1440*100) *var(--vw));
@@ -809,7 +993,10 @@ body {
 
             &::after {
               content: '';
-              background-color: #EA5413;
+              background-image: url(../images/arrow-support-01.svg);
+              background-repeat: no-repeat;
+              background-position: bottom;
+              background-size: contain;
               width: min(5px, (5/1440*100) *var(--vw));
               height: min(13px, (13/1440*100) *var(--vw));
               display: inline-block;
@@ -860,6 +1047,20 @@ body {
 
   &__inner {
     padding: min(100px, (100/1440*100) *var(--vw)) 0 min(120px, (120/1440*100) *var(--vw));
+    position: relative;
+
+    &::before {
+      content: '';
+      background-image: url(../images/img-question-01.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+      width: min(329px, (329/1440*100) *var(--vw));
+      height: min(294px, (294/1440*100) *var(--vw));
+      position: absolute;
+      top: min(-120px, (-120/1440*100) *var(--vw));
+      left: min(-90px, (-90/1440*100) *var(--vw));
+    }
   }
 
   &__heading {
@@ -890,12 +1091,38 @@ body {
       margin: min(50px, (50/1440*100) *var(--vw)) 0;
     }
 
-    &--txt {
+    &--content {
       background: #006949;
-      width: calc(100% - min(40px, (40/1440*100) *var(--vw)));
-      height: 100%;
+      width: 100%;
+      height: min(303px, (303/1440*100) *var(--vw));
       padding: min(45px, (45/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw)) min(40px, (40/1440*100) *var(--vw));
       margin-top: min(40px, (40/1440*100) *var(--vw));
+      font-size: min(20px, (20/1440*100) *var(--vw));
+      font-weight: 700;
+      color: #FFFFFF;
+      position: relative;
+
+      &::before {
+        content: '';
+        background-image: url(../images/img-question-04.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+        width: min(398px, (398/1440*100) *var(--vw));
+        height: min(218px, (219/1440*100) *var(--vw));
+        display: block;
+      }
+    }
+
+    &--txt {
+      position: absolute;
+      top: min(45px, (45/1440*100) *var(--vw));
+      left: min(40px, (40/1440*100) *var(--vw));
+      width: min(370px, (370/1440*100) *var(--vw));
+      height: min(134px, (134/1440*100) *var(--vw));
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     &::before {
