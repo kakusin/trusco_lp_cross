@@ -66,7 +66,6 @@ body {
 
 //floating
 .floating {
-  display: none; //test
   opacity: 0;
   background-color: #EBEBEB;
   position: sticky;
@@ -74,7 +73,7 @@ body {
   left: 0;
   transition: 0.3s;
   z-index: 999;
-  padding: min(45px, (45/1440*100) *var(--vw)) 0;
+  padding: min(45px, (45/1440*100) *var(--vw)) 0 min(30px, (30/1440*100) *var(--vw));
 
   &.show {
     opacity: 1;
@@ -225,11 +224,12 @@ body {
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: auto;
-    width: 799px;
-    height: 143px;
+    width: min(777px, (777/1440*100) *var(--vw));
+    height: min(133px, (133/1440*100) *var(--vw));
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: min(10px, (10/1440*100) *var(--vw));
   }
 }
 
@@ -237,20 +237,20 @@ body {
 .mv {
   background: url(../images/bg-mv-01.png);
   background-repeat: repeat;
-  background-position: bottom;
-  background-size: auto;
+  background-position: top left;
+  background-size: contain;
 
   &__inner {
     height: 100%;
-    width: min(1126px, (1126/1440*100) *var(--vw));
-    margin: 0 auto 0 min(169px, (169/1440*100) *var(--vw));
-    padding: min(183px, (183/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw));
+    width: min(1440px, (1440/1440*100) *var(--vw));
+    margin: 0 auto;
+    padding: min(180px, (180/1440*100) *var(--vw)) min(160px, (160/1440*100) *var(--vw)) 0 min(169px, (169/1440*100) *var(--vw));
     position: relative;
   }
 
   &__heading {
     &--txt {
-      margin-top: min(32px, (32/1440*100) *var(--vw));
+      margin-top: min(30px, (30/1440*100) *var(--vw));
 
       &::after {
         content: '';
@@ -258,14 +258,14 @@ body {
         width: min(341px, (341/1440*100) *var(--vw));
         height: min(56px, (56/1440*100) *var(--vw));
         display: block;
-        margin-top: min(29px, (29/1440*100) *var(--vw));
+        margin-top: min(28px, (28/1440*100) *var(--vw));
       }
     }
 
     &--img {
       position: absolute;
-      top: min(163px, (163/1440*100) *var(--vw));
-      right: 0;
+      top: 24%;
+      right: 10.1%;
     }
   }
 
@@ -274,7 +274,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: min(53px, (53/1440*100) *var(--vw));
-    margin-top: min(48px, (48/1440*100) *var(--vw));
+    margin: min(47px, (47/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw));
 
     &--txt {
       font-size: min(28px, (28/1440*100) *var(--vw));
@@ -299,7 +299,7 @@ body {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          right: min(-41px, (-41/1440*100) *var(--vw));
+          right: -15%;
         }
       }
     }
@@ -309,9 +309,12 @@ body {
 //video
 .video {
   background: #EBEBEB;
-  position: relative;
-  margin-bottom: min(224px, (224/1440*100) *var(--vw));
   height: min(665px, (665/1440*100) *var(--vw));
+  margin-bottom: min(172px, (172/1440*100) *var(--vw));
+
+  &__inner {
+    height: 100%;
+  }
 
   &::after {
     content: "";
@@ -322,110 +325,107 @@ body {
     border-left: min(275px, (275/1440*100) *var(--vw)) solid transparent;
     border-top: min(110px, (110/1440*100) *var(--vw)) solid #EBEBEB;
     border-bottom: 0;
-    position: absolute;
-    bottom: min(-110px, (-110/1440*100) *var(--vw));
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
+    display: block;
   }
 }
 
 //point
 .point {
-  &__inner{
+  &__inner {
     position: relative;
   }
+
   &__wrap {
-    margin-bottom: min(174px, (174/1440*100) *var(--vw));
+    margin-bottom: min(138px, (138/1440*100) *var(--vw));
 
     &:nth-child(2) {
-      .point__inner{
+      margin-bottom: min(120px, (120/1440*100) *var(--vw));
+
+      .point__inner {
         &::before {
           content: '';
           background: url(../images/img-point-01.png);
           width: min(341px, (341/1440*100) *var(--vw));
           height: min(55px, (55/1440*100) *var(--vw));
           position: absolute;
-          top: min(-185px, (-185/1440*100) *var(--vw));
-          left:  min(-95px, (-95/1440*100) *var(--vw));
+          top: -33.8%;
+          left: -9.1%;
         }
       }
     }
 
     &:last-child {
-      margin-bottom: min(80px, (80/1440*100) *var(--vw));
-      .point__inner{
+      margin-bottom: min(109px, (109/1440*100) *var(--vw));
+
+      .point__inner {
         &::before {
           content: '';
           background: url(../images/img-point-05.png);
           width: min(165px, (165/1440*100) *var(--vw));
           height: min(87px, (87/1440*100) *var(--vw));
           position: absolute;
-          top: min(-213px, (-213/1440*100) *var(--vw));
-          right:  min(-53px, (-53/1440*100) *var(--vw));
+          top: -38%;
+          right: -4.5%;
+        }
+      }
+
+      .point__box--txt01 {
+        &::after {
+          margin: min(2px, (2/1440*100) *var(--vw)) auto 0;
         }
       }
     }
   }
 
   &__heading {
-    background: #EA5413;
-    background: url(../images/bg-point-02.png);
-    background-repeat: repeat;
-    color: #FFFFFF;
-    font-size: min(40px, (40/1440*100) *var(--vw));
+    margin-bottom: min(39px, (39/1440*100) *var(--vw));
     font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: min(80px, (80/1440*100) *var(--vw));
-    margin-bottom: min(50px, (50/1440*100) *var(--vw));
-    position: relative;
-
-    &::before {
-      content: '';
-      background: url(../images/bg-point-01.png);
-      background-repeat: no-repeat;
-      background-position: bottom;
-      background-size: auto;
-      width: min(290px, (590/1440*100) *var(--vw));
-      height: min(54px, (54/1440*100) *var(--vw));
-      position: absolute;
-      top: min(-54px, (-54/1440*100) *var(--vw));
-      z-index: 5;
-    }
 
     &--sub {
-      position: absolute;
-      top: min(-54px, (-54/1440*100) *var(--vw));
       color: #FFDD1A;
       font-size: min(45px, (45/1440*100) *var(--vw));
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      gap: min(4px, (4/1440*100) *var(--vw));
+      gap: min(6px, (6/1440*100) *var(--vw));
       line-height: 1;
       z-index: 10;
+      background: url(../images/bg-point-01.svg);
+      width: min(290px, (590/1440*100) *var(--vw));
+      height: min(47px, (47/1440*100) *var(--vw));
+      padding-bottom: min(7px, (7/1440*100) *var(--vw));
+      margin: 0 auto;
+    }
 
+    &--ttl {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url(../images/bg-point-02.png);
+      background-repeat: repeat;
+      font-size: min(40px, (40/1440*100) *var(--vw));
+      color: #FFFFFF;
+      height: min(80px, (80/1440*100) *var(--vw));
     }
 
     &--txt {
       font-size: min(20px, (20/1440*100) *var(--vw));
-      padding-bottom: min(10px, (10/1440*100) *var(--vw));
+      padding-bottom: min(8px, (8/1440*100) *var(--vw));
     }
   }
 
   &__txt {
     font-size: min(24px, (24/1440*100) *var(--vw));
     font-weight: 700;
-    margin-bottom: min(60px, (60/1440*100) *var(--vw));
     text-align: center;
   }
 
   &__container {
     display: flex;
-    align-items: center;
     justify-content: center;
     position: relative;
+    margin-top: min(60px, (60/1440*100) *var(--vw));
 
     &::before {
       content: '';
@@ -436,7 +436,7 @@ body {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: min(-50px, (50/1440*100) *var(--vw));
+      right: -4.5%;
       z-index: 5;
     }
   }
@@ -448,11 +448,6 @@ body {
   }
 
   &__box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: min(40px, (40/1440*100) *var(--vw));
     width: min(403px, (403/1440*100) *var(--vw));
     position: relative;
     z-index: 10;
@@ -460,6 +455,8 @@ body {
     &--txt01 {
       font-size: min(20px, (20/1440*100) *var(--vw));
       font-weight: 600;
+      width: fit-content;
+      margin: min(80px, (80/1440*100) *var(--vw)) auto 0;
 
       &::after {
         content: '';
@@ -470,7 +467,7 @@ body {
         width: min(109px, (109/1440*100) *var(--vw));
         height: min(83px, (83/1440*100) *var(--vw));
         display: block;
-        margin: min(50px, (50/1440*100) *var(--vw)) auto 0;
+        margin: 41px auto 0;
       }
     }
 
@@ -478,6 +475,7 @@ body {
       font-size: min(24px, (24/1440*100) *var(--vw));
       font-weight: 800;
       text-align: center;
+      margin-top: 30px;
     }
 
     &--strong {
@@ -496,6 +494,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: min(40px, (40/1440*100) *var(--vw));
+    margin-top: min(52px, (52/1440*100) *var(--vw));
   }
 
   &__item {
@@ -508,7 +507,7 @@ body {
       color: #FFDD1A;
       font-size: min(27px, (27/1440*100) *var(--vw));
       font-weight: 700;
-      height: min(105px, (105/1440*100) *var(--vw));
+      height: min(106px, (106/1440*100) *var(--vw));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -524,7 +523,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: min(200px, (200/1440*100) *var(--vw));
+      height: min(201px, (201/1440*100) *var(--vw));
       border-left: min(8px, (8/1440*100) *var(--vw)) solid #006949;
       border-right: min(8px, (8/1440*100) *var(--vw)) solid #006949;
     }
@@ -534,7 +533,7 @@ body {
       color: #161616;
       font-size: min(20px, (20/1440*100) *var(--vw));
       font-weight: 700;
-      height: min(106px, (106/1440*100) *var(--vw));
+      height: min(107px, (107/1440*100) *var(--vw));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -559,7 +558,7 @@ body {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        right: min(-56px, (-56/1440*100) *var(--vw));
+        right: -17%;
         z-index: 10;
         line-height: 1;
         padding-bottom: min(23px, (23/1440*100) *var(--vw));
@@ -576,7 +575,7 @@ body {
   background-size: cover;
 
   &__inner {
-    padding: min(170px, (170/1440*100) *var(--vw)) 0 min(167px, (167/1440*100) *var(--vw));
+    padding: min(164px, (164/1440*100) *var(--vw)) 0 min(167px, (167/1440*100) *var(--vw));
     position: relative;
 
     &::before {
@@ -588,8 +587,8 @@ body {
       width: min(284.63px, (284.63/1440*100) *var(--vw));
       height: min(105.6px, (105.6/1440*100) *var(--vw));
       position: absolute;
-      bottom: 0;
-      right: min(19px, (19/1440*100) *var(--vw));
+      bottom: -0.2%;
+      right: -1.9%;
     }
   }
 
@@ -600,11 +599,13 @@ body {
     width: fit-content;
     text-align: center;
     margin: 0 auto min(63px, (63/1440*100) *var(--vw));
+    line-height: 1;
+    padding-bottom: 16px;
   }
 
   &__list {
     display: grid;
-    grid-template-rows: min(380px, (380/1440*100) *var(--vw)) min(210px, (210/1440*100) *var(--vw));
+    grid-template-rows: 1fr min(210px, (210/1440*100) *var(--vw));
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: min(166px, (166/1440*100) *var(--vw)) min(36px, (36/1440*100) *var(--vw));
   }
@@ -618,7 +619,7 @@ body {
     flex-direction: column;
     position: relative;
     background: #FFFFFF;
-    padding: 0 min(20px, (20/1440*100) *var(--vw));
+    padding: 0 min(15px, (15/1440*100) *var(--vw)) min(20px, (20/1440*100) *var(--vw));
 
     &:last-child {
       grid-row: 2 / 3;
@@ -626,6 +627,7 @@ body {
       margin: 0 min(140px, (140/1440*100) *var(--vw));
       flex-direction: row;
       height: min(210px, (210/1440*100) *var(--vw));
+      padding: 0 min(20px, (20/1440*100) *var(--vw)) 0;
 
       &::after {
         content: '';
@@ -636,14 +638,14 @@ body {
         width: min(108px, (108/1440*100) *var(--vw));
         height: min(82px, (82/1440*100) *var(--vw));
         position: absolute;
-        top: min(-148px, (-148/1440*100) *var(--vw));
+        top: -60%;
         left: 50%;
         transform: translateX(-50%);
       }
 
       .step__item {
         &--num {
-          margin: 0 min(20px, (20/1440*100) *var(--vw)) auto min(30px, (30/1440*100) *var(--vw));
+          margin: 0 min(20px, (20/1440*100) *var(--vw)) auto min(8px, (8/1440*100) *var(--vw));
         }
 
         &--content {
@@ -651,7 +653,7 @@ body {
         }
 
         &--ttl {
-          margin: 0 0 min(24px, (24/1440*100) *var(--vw)) 0;
+          margin: 0 0 min(21px, (21/1440*100) *var(--vw)) 0;
         }
       }
 
@@ -662,7 +664,7 @@ body {
     }
 
     &--ttl {
-      margin: min(25px, (25/1440*100) *var(--vw)) 0 min(24px, (24/1440*100) *var(--vw));
+      margin: min(20px, (20/1440*100) *var(--vw)) 0 min(10px, (10/1440*100) *var(--vw));
       font-size: min(20px, (20/1440*100) *var(--vw));
       font-weight: 800;
       color: #006949;
@@ -671,6 +673,7 @@ body {
     &--txt {
       font-size: min(16px, (16/1440*100) *var(--vw));
       font-weight: 500;
+      line-height: 1.6;
     }
 
     &:not(:last-child) {
@@ -685,7 +688,7 @@ body {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        right: min(-30px, (-30/1440*100) *var(--vw));
+        right: -14%;
       }
     }
 
@@ -701,7 +704,7 @@ body {
 //support
 .support {
   &__inner {
-    padding: min(119px, (119/1440*100) *var(--vw)) 0 min(110px, (110/1440*100) *var(--vw));
+    padding: min(119px, (119/1440*100) *var(--vw)) 0 min(77px, (77/1440*100) *var(--vw));
   }
 
   &__heading {
@@ -725,12 +728,12 @@ body {
       width: 0;
       height: 0;
       border-style: solid;
-      border-right: min(200px, (200/1440*100) *var(--vw)) solid transparent;
-      border-left: min(200px, (200/1440*100) *var(--vw)) solid transparent;
-      border-top: min(80px, (80/1440*100) *var(--vw)) solid #006949;
+      border-right: min(170px, (170/1440*100) *var(--vw)) solid transparent;
+      border-left: min(170px, (170/1440*100) *var(--vw)) solid transparent;
+      border-top: min(60px, (60/1440*100) *var(--vw)) solid #006949;
       border-bottom: 0;
       position: absolute;
-      bottom: min(-59px, (-59/1440*100) *var(--vw));
+      bottom: -35%;
     }
   }
 
@@ -739,7 +742,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: min(44px, (44/1440*100) *var(--vw));
-    margin-bottom: min(90px, (90/1440*100) *var(--vw));
+    margin-bottom: min(74px, (74/1440*100) *var(--vw));
 
     .support__item {
       width: 100%;
@@ -752,7 +755,7 @@ body {
         font-size: min(24px, (24/1440*100) *var(--vw));
         font-weight: 800;
         color: #EA5413;
-        margin: min(30px, (30/1440*100) *var(--vw)) 0;
+        margin: min(20px, (20/1440*100) *var(--vw)) 0 min(12px, (12/1440*100) *var(--vw));
       }
 
       &txt {
@@ -765,7 +768,7 @@ body {
   &__ttl {
     font-size: min(30px, (30/1440*100) *var(--vw));
     font-weight: 800;
-    margin-bottom: min(59px, (59/1440*100) *var(--vw));
+    margin-bottom: min(49px, (49/1440*100) *var(--vw));
     text-align: center;
 
     &--orange {
@@ -774,8 +777,11 @@ body {
   }
 
   &__list {
-    display: flex;
-    margin-bottom: min(80px, (80/1440*100) *var(--vw));
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr min(404px, (404/1440*100) *var(--vw)) 1fr;
+    gap: min(40px, (40/1440*100) *var(--vw));
+    margin-bottom: min(73px, (73/1440*100) *var(--vw));
 
     .support__item {
       width: 100%;
@@ -809,8 +815,8 @@ body {
           height: min(3px, (3/1440*100) *var(--vw));
           width: min(350px, (350/1440*100) *var(--vw));
           position: absolute;
-          top: min(24px, (24/1440*100) *var(--vw));
-          left: min(150px, (150/1440*100) *var(--vw));
+          top: 6.8%;
+          left: 43%;
           z-index: 5;
         }
       }
@@ -822,19 +828,23 @@ body {
 
           &::before {
             content: '';
-            background-image: url(../images/img-support-01.png);
+            background-image: url(../images/img-support-01.svg);
             background-repeat: no-repeat;
             background-position: bottom;
             background-size: contain;
             width: min(35px, (35/1440*100) *var(--vw));
             height: min(25px, (25/1440*100) *var(--vw));
             position: absolute;
-            top: min(-19px, (-19/1440*100) *var(--vw));
-            right: min(-18px, (-18/1440*100) *var(--vw));
+            top: -38%;
+            right: -12%;
           }
         }
       }
     }
+  }
+
+  &__txt {
+    text-align: center;
   }
 
   &__img {
@@ -848,7 +858,7 @@ body {
     font-weight: 800;
     color: #EA5413;
     text-align: center;
-    margin: min(50px, (50/1440*100) *var(--vw)) 0 min(119px, (119/1440*100) *var(--vw));
+    margin: min(35px, (35/1440*100) *var(--vw)) 0 min(141px, (141/1440*100) *var(--vw));
   }
 
   &__wrap {
@@ -856,7 +866,7 @@ body {
 
     .support {
       &__inner {
-        padding: min(170px, (170/1440*100) *var(--vw)) 0 min(110px, (110/1440*100) *var(--vw));
+        padding: min(40px, (40/1440*100) *var(--vw)) 0 min(110px, (110/1440*100) *var(--vw));
         position: relative;
 
         &::before {
@@ -868,15 +878,14 @@ body {
           width: min(366px, (366/1440*100) *var(--vw));
           height: min(300px, (300/1440*100) *var(--vw));
           position: absolute;
-          top: min(-165px, (-165/1440*100) *var(--vw));
-          right: min(-70px, (-70/1440*100) *var(--vw));
+          top: -17.7%;
+          right: -6.4%;
         }
       }
 
       &__heading {
         font-size: min(40px, (40/1440*100) *var(--vw));
         font-weight: 800;
-        margin-top: min(40px, (40/1440*100) *var(--vw));
         color: #006949;
         background: none;
         text-align: center;
@@ -895,23 +904,23 @@ body {
           width: min(379px, (379/1440*100) *var(--vw));
           height: min(70px, (70/1440*100) *var(--vw));
           border-radius: min(40px, (40/1440*100) *var(--vw));
-          position: absolute;
-          top: min(-130px, (-130/1440*100) *var(--vw));
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
+          margin-bottom: min(42px, (42/1440*100) *var(--vw));
 
           &::after {
             content: '';
             width: 0;
             height: 0;
             border-style: solid;
-            border-right: min(47px, (47/1440*100) *var(--vw)) solid transparent;
-            border-left: min(47px, (47/1440*100) *var(--vw)) solid transparent;
-            border-top: min(28px, (28/1440*100) *var(--vw)) solid #EA5413;
+            border-right: min(41px, (41/1440*100) *var(--vw)) solid transparent;
+            border-left: min(41px, (41/1440*100) *var(--vw)) solid transparent;
+            border-top: min(21px, (21/1440*100) *var(--vw)) solid #EA5413;
             border-bottom: 0;
             position: absolute;
-            bottom: min(-21px, (-21/1440*100) *var(--vw));
+            bottom: -29%;
             left: 50%;
             transform: translateX(-50%);
           }
@@ -923,7 +932,7 @@ body {
         align-items: center;
         justify-content: space-between;
         gap: min(126px, (126/1440*100) *var(--vw));
-        margin-top: min(69px, (69/1440*100) *var(--vw));
+        margin-top: min(55px, (55/1440*100) *var(--vw));
         position: relative;
 
         &::after {
@@ -968,11 +977,11 @@ body {
         &--ttl {
           font-size: min(20px, (20/1440*100) *var(--vw));
           font-weight: 900;
-          margin-top: min(20px, (20/1440*100) *var(--vw));
+          margin-top: min(15px, (15/1440*100) *var(--vw));
         }
 
         &--logo {
-          height: min(125px, (125/1440*100) *var(--vw));
+          height: min(122px, (122/1440*100) *var(--vw));
           display: flex;
           align-items: center;
         }
@@ -980,10 +989,11 @@ body {
         &--txt {
           font-size: min(16px, (16/1440*100) *var(--vw));
           font-weight: 700;
+          text-align: center;
         }
 
         &--link {
-          margin-top: min(40px, (40/1440*100) *var(--vw));
+          margin-top: min(33px, (33/1440*100) *var(--vw));
 
           a {
             font-size: min(16px, (16/1440*100) *var(--vw));
@@ -1046,7 +1056,7 @@ body {
   background: #EB5C02;
 
   &__inner {
-    padding: min(100px, (100/1440*100) *var(--vw)) 0 min(120px, (120/1440*100) *var(--vw));
+    padding: min(82px, (82/1440*100) *var(--vw)) 0 min(120px, (120/1440*100) *var(--vw));
     position: relative;
 
     &::before {
@@ -1058,8 +1068,8 @@ body {
       width: min(329px, (329/1440*100) *var(--vw));
       height: min(294px, (294/1440*100) *var(--vw));
       position: absolute;
-      top: min(-120px, (-120/1440*100) *var(--vw));
-      left: min(-90px, (-90/1440*100) *var(--vw));
+      top: -13.5%;
+      left: -8.1%;
     }
   }
 
@@ -1073,7 +1083,7 @@ body {
   &__list {
     display: flex;
     gap: min(124px, (124/1440*100) *var(--vw));
-    margin-top: min(70px, (70/1440*100) *var(--vw));
+    margin-top: min(57px, (57/1440*100) *var(--vw));
   }
 
   &__item {
@@ -1088,14 +1098,14 @@ body {
     &--ttl {
       font-size: min(30px, (30/1440*100) *var(--vw));
       font-weight: 700;
-      margin: min(50px, (50/1440*100) *var(--vw)) 0;
+      margin: min(37px, (37/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw));
     }
 
     &--content {
       background: #006949;
       width: 100%;
       height: min(303px, (303/1440*100) *var(--vw));
-      padding: min(45px, (45/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw)) min(40px, (40/1440*100) *var(--vw));
+      padding: min(43px, (43/1440*100) *var(--vw)) 0 0 min(38px, (38/1440*100) *var(--vw));
       margin-top: min(40px, (40/1440*100) *var(--vw));
       font-size: min(20px, (20/1440*100) *var(--vw));
       font-weight: 700;
@@ -1104,7 +1114,7 @@ body {
 
       &::before {
         content: '';
-        background-image: url(../images/img-question-04.png);
+        background-image: url(../images/img-question-04.svg);
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: contain;
@@ -1116,8 +1126,8 @@ body {
 
     &--txt {
       position: absolute;
-      top: min(45px, (45/1440*100) *var(--vw));
-      left: min(40px, (40/1440*100) *var(--vw));
+      top: 14%;
+      left: 8%;
       width: min(370px, (370/1440*100) *var(--vw));
       height: min(134px, (134/1440*100) *var(--vw));
       display: flex;
@@ -1131,8 +1141,8 @@ body {
       width: min(62px, (62/1440*100) *var(--vw));
       aspect-ratio: 1/1;
       background-color: #EB5C02;
-      left: min(-31px, (-31/1440*100) *var(--vw));
-      top: min(-31px, (-31/1440*100) *var(--vw));
+      left: -6.5%;
+      top: -5.5%;
       transform: rotate(45deg);
       z-index: 2;
     }
@@ -1143,8 +1153,8 @@ body {
       width: min(62px, (62/1440*100) *var(--vw));
       aspect-ratio: 1/1;
       background-color: #EB5C02;
-      right: min(-31px, (-31/1440*100) *var(--vw));
-      bottom: min(-31px, (-31/1440*100) *var(--vw));
+      right: -6.5%;
+      bottom: -5.5%;
       transform: rotate(45deg);
       z-index: 2;
     }
