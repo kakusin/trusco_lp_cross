@@ -342,7 +342,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: min(53px, (53/1440*100) *var(--vw));
-    margin: min(47px, (47/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw));
+    padding: min(47px, (47/1440*100) *var(--vw)) 0 min(40px, (40/1440*100) *var(--vw));
 
     &--txt {
       font-size: min(28px, (28/1440*100) *var(--vw));
@@ -379,12 +379,10 @@ body {
 .video {
   background: #EBEBEB;
   height: min(665px, (665/1440*100) *var(--vw));
-  margin-bottom: min(172px, (172/1440*100) *var(--vw));
 
   @media screen and (max-width: 768px) {
-    margin-bottom: calc((50/375*100) *var(--vw));
-    height: auto;
     background: none;
+    height: auto;
   }
 
   &__inner {
@@ -429,6 +427,12 @@ body {
 
 //point
 .point {
+  margin-top: min(172px, (172/1440*100) *var(--vw));
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: calc((50/375*100) *var(--vw));
+  }
+
   &__inner {
     position: relative;
   }
