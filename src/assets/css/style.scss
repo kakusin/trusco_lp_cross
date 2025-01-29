@@ -98,24 +98,25 @@ body {
     >li {
 
       >a {
-        padding: 0 min(30px, (30/1440*100) *var(--vw));
+        padding: 0 min(20px, (20/1440*100) *var(--vw));
         height: min(80px, (80/1440*100) *var(--vw));
         display: block;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         border-radius: min(10px, (10/1440*100) *var(--vw));
         font-size: min(24px, (24/1440*100) *var(--vw));
         font-weight: 700;
         transition: 0.3s;
+        border: min(3px, (3/1440*100) *var(--vw)) solid #006949;
 
         @media screen and (max-width: 768px) {
-          justify-content: center;
           gap: calc((5/375*100) *var(--vw));
           padding: 0 calc((4/375*100) *var(--vw));
           height: calc((32.5/375*100) *var(--vw));
           border-radius: calc((10/375*100) *var(--vw));
           font-size: calc((14/375*100) *var(--vw));
+          border: calc((3/375*100) *var(--vw)) solid #006949;
         }
 
         &::before {
@@ -156,10 +157,12 @@ body {
           background-image: url(../images/icon-floating-01.svg);
           width: min(49px, (49/1440*100) *var(--vw));
           height: min(42px, (42/1440*100) *var(--vw));
+          margin-right: min(10px, (10/1440*100) *var(--vw));
 
           @media screen and (max-width: 768px) {
-            width: calc((20/375*100) *var(--vw));
-            height: calc((17.09/375*100) *var(--vw));
+            width: calc((27/375*100) *var(--vw));
+            height: calc((23.07/375*100) *var(--vw));
+            margin-right: calc((5/375*100) *var(--vw));
           }
         }
       }
@@ -175,11 +178,9 @@ body {
       a {
         background: #FFFFFF;
         color: #006949;
-        border: min(3px, (3/1440*100) *var(--vw)) solid #006949;
         box-shadow: 0px min(4px, (4/1440*100) *var(--vw)) min(4px, (4/1440*100) *var(--vw)) 0px #044430;
 
         @media screen and (max-width: 768px) {
-          border: calc((3/375*100) *var(--vw)) solid #006949;
           box-shadow: 0px calc((4/375*100) *var(--vw)) calc((4/375*100) *var(--vw)) 0px #044430;
         }
 
@@ -187,10 +188,12 @@ body {
           background-image: url(../images/icon-floating-02.svg);
           width: min(51px, (51/1440*100) *var(--vw));
           height: min(49px, (49/1440*100) *var(--vw));
+          margin-right: min(25px, (25/1440*100) *var(--vw));
 
           @media screen and (max-width: 768px) {
-            width: calc((25/375*100) *var(--vw));
-            height: calc((20.34/375*100) *var(--vw));
+            width: calc((28/375*100) *var(--vw));
+            height: calc((22.78/375*100) *var(--vw));
+            margin-right: calc((-2/375*100) *var(--vw));
           }
         }
       }
@@ -534,14 +537,14 @@ body {
           width: min(165px, (165/1440*100) *var(--vw));
           height: min(87px, (87/1440*100) *var(--vw));
           position: absolute;
-          top: -37.8%;
+          top: -36.5%;
           right: -4.5%;
           z-index: 50;
 
           @media screen and (max-width: 768px) {
             width: calc((80/375*100) *var(--vw));
             height: calc((41.93/375*100) *var(--vw));
-            top: -17%;
+            top: -16.8%;
             right: 2%;
           }
         }
@@ -589,7 +592,7 @@ body {
       line-height: 1;
       z-index: 10;
       background: url(../images/bg-point-01.svg);
-      background-size: contain;
+      background-size: cover;
       width: min(290px, (290/1440*100) *var(--vw));
       height: min(47px, (47/1440*100) *var(--vw));
       padding-bottom: min(7px, (7/1440*100) *var(--vw));
@@ -674,7 +677,7 @@ body {
   &__img {
     position: relative;
     z-index: 10;
-    width: min(697px, (697/1440*100) *var(--vw));
+    width: min(692px, (692/1440*100) *var(--vw));
 
     @media screen and (max-width: 768px) {
       width: 100%;
@@ -1242,13 +1245,13 @@ body {
       border-top: min(60px, (60/1440*100) *var(--vw)) solid #006949;
       border-bottom: 0;
       position: absolute;
-      bottom: -35%;
+      bottom: -34%;
 
       @media screen and (max-width: 768px) {
         border-right: calc((85/375*100) *var(--vw)) solid transparent;
         border-left: calc((85/375*100) *var(--vw)) solid transparent;
         border-top: calc((30/375*100) *var(--vw)) solid #006949;
-        bottom: -17%;
+        bottom: -16%;
       }
     }
   }
@@ -1258,7 +1261,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: min(44px, (44/1440*100) *var(--vw));
-    margin-bottom: min(74px, (74/1440*100) *var(--vw));
+    margin-bottom: min(84px, (84/1440*100) *var(--vw));
 
     @media screen and (max-width: 768px) {
       display: block;
@@ -1318,9 +1321,9 @@ body {
   &__list {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr min(404px, (404/1440*100) *var(--vw)) 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: min(40px, (40/1440*100) *var(--vw));
-    margin-bottom: min(73px, (73/1440*100) *var(--vw));
+    margin-bottom: min(85px, (85/1440*100) *var(--vw));
 
     @media screen and (max-width: 768px) {
       display: block;
@@ -1358,7 +1361,7 @@ body {
           margin: 0;
           font-size: calc((16/375*100) *var(--vw));
           width: calc((60/375*100) *var(--vw));
-          height: calc((180/375*100) *var(--vw));
+          height: calc((114/375*100) *var(--vw));
           border-radius: calc((8/375*100) *var(--vw));
           align-items: center;
         }
@@ -1389,9 +1392,9 @@ body {
           z-index: 5;
 
           @media screen and (max-width: 768px) {
-            height: calc((350/375*100) *var(--vw));
+            height: calc((200/375*100) *var(--vw));
             width: calc((3/375*100) *var(--vw));
-            top: 22.8%;
+            top: 50%;
             left: 8%;
           }
         }
@@ -1408,17 +1411,17 @@ body {
             background-repeat: no-repeat;
             background-position: bottom;
             background-size: contain;
-            width: min(35px, (35/1440*100) *var(--vw));
-            height: min(25px, (25/1440*100) *var(--vw));
+            width: min(44px, (44/1440*100) *var(--vw));
+            height: min(37px, (37/1440*100) *var(--vw));
             position: absolute;
-            top: -38%;
-            right: -12%;
+            top: -61%;
+            right: -17%;
 
             @media screen and (max-width: 768px) {
-              width: calc((35/375*100) *var(--vw));
-              height: calc((25/375*100) *var(--vw));
-              top: -11%;
-              right: -35%;
+              width: calc((30/375*100) *var(--vw));
+              height: calc((25.23/375*100) *var(--vw));
+              top: -16.5%;
+              right: -28%;
             }
           }
         }
@@ -1540,7 +1543,7 @@ body {
             border-top: min(21px, (21/1440*100) *var(--vw)) solid #EA5413;
             border-bottom: 0;
             position: absolute;
-            bottom: -29%;
+            bottom: -28%;
             left: 50%;
             transform: translateX(-50%);
 
@@ -1903,18 +1906,18 @@ body {
     &--txt {
       position: absolute;
       top: 14%;
-      left: 13%;
-      width: min(320px, (320/1440*100) *var(--vw));
+      left: 15.5%;
+      width: min(300px, (300/1440*100) *var(--vw));
       height: min(134px, (134/1440*100) *var(--vw));
       display: flex;
       align-items: center;
       justify-content: center;
 
       @media screen and (max-width: 768px) {
-        width: calc((250/375*100) *var(--vw));
+        width: calc((240/375*100) *var(--vw));
         height: calc((80/375*100) *var(--vw));
         top: 18%;
-        left: 11%;
+        left: 11.5%;
       }
     }
 
