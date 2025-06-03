@@ -14,7 +14,7 @@ export default defineConfig({
   },
   base: './',
   build: {
-    outDir: './dist',
+    outDir: '../dist',
     emptyOutDir: true,
     assetsInlineLimit: 0,
     rollupOptions: {
@@ -22,8 +22,8 @@ export default defineConfig({
         'src/index.html',
       ],
       output: {
-        entryFileNames: `assets/js/[name].js`,
-        chunkFileNames: `assets/js/[name].js`,
+        entryFileNames: `assets/js/script.js`,
+        chunkFileNames: `assets/js/script.js`,
         assetFileNames: (assetInfo) => {
           let filename = assetInfo.originalFileName;
 
@@ -36,7 +36,7 @@ export default defineConfig({
             return filename != null ? filename.join('/') + '/[name].[ext]' : 'assets/img/[name].[ext]' 
           }
           if (/\.css$/.test(assetInfo.name)) {
-            return 'assets/css/[name].[ext]';
+            return 'assets/css/style.[ext]';
           }
           return 'assets/[name].[ext]';
         }
