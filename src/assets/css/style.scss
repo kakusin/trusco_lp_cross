@@ -410,7 +410,7 @@ body {
 //video
 .video {
   background: #EBEBEB;
-  height: min(665px, (665/1440*100) *var(--vw));
+  height: min(632.5px, (632.5/1440*100) *var(--vw));
 
   @media screen and (max-width: 768px) {
     background: none;
@@ -420,11 +420,17 @@ body {
   &__inner {
     height: 100%;
     padding: min(80px, (80/1440*100) *var(--vw)) 0;
+    width: min(840px, (840/1440*100) *var(--vw));
 
     @media screen and (max-width: 768px) {
       padding: calc((40/375*100) *var(--vw)) calc((20/375*100) *var(--vw));
       background: #EBEBEB;
+      width: 100%;
     }
+  }
+
+  &__iframe {
+    aspect-ratio: 16/9;
   }
 
   &__img {
